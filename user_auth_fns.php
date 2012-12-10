@@ -1,5 +1,5 @@
 <?php
-
+echo '<p>user_auth_fns.php1</p>';
   function register ($username, $email, $password) {
     // 데이터베이스에 사용자를 등록한다.
     // true나 오류 메시지를 반환한다.
@@ -26,13 +26,14 @@
   }
 
   function login ($username, $password) {
+echo '<p>login()1(user_auth_fns.php)</p>';	  
 	// 데이터베이스에 사용자 이름과 비밀번호 쌍이 있는지 검사한다.
 	// 있으면 true를 반환하고
 	// 아니면 예외를 던진다.
-
+echo '<p>$username: '.$username.', $password: '.$password.'(user_auth_fns.php)</p>';
 	// 데이터베이스에 접속한다.
 	$conn = db_connect();
-
+echo '<p>login()2</p>';
 	// 사용자 이름이 이미 쓰이고 있지 않은지 확인한다.
     $result = $conn->query("select * from user where username='".$username."'and passwd = sha1('".$password."')");
 
@@ -45,6 +46,7 @@
 	} else {
 	  throw new Exception('Could not log you in.');
 	}
+echo '<p>login()100</p>';
   }
 
   function check_valid_user() {
@@ -61,4 +63,5 @@
 	  exit;
 	}
   }  
+echo '<p>user_auth_fns.php100</p>';
 ?>

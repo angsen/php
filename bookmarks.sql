@@ -1,4 +1,4 @@
-create database bookmards;
+create database bookmarks;
 use bookmarks;
 
 create table user (

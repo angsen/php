@@ -12,7 +12,7 @@
 
   function valid_email($address) {
     // 이메일 주소 형식이 옳은지 확인한다.
-    if (ereg('^[a-ZA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$', $address)) {
+    if (ereg('^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$', $address)) {
       return true;
     } else {
       return false;
